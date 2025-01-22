@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager - My Tasks</title>
+    <link rel="stylesheet" href="task.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Import Chart.js for pie chart -->
+</head>
+
+<body>
+
+    <!-- Header with title and logo -->
+    <header class="header">
+        <img src="logo.jpg" alt="Logo" class="logo">
+        <h1 class="header-title">Task Manager</h1>
+    </header>
+
+    <!-- Main Dashboard -->
+    <div class="dashboard">
+
+        <!-- Left Panel - Task List and Statistics -->
+        <div class="left-panel">
+            <h2 class="panel-title">Recent Tasks</h2>
+            <button id="sort-tasks-btn">Sort Tasks</button>
+            <ul class="task-list" id="recent-tasks"></ul> <!-- Recent tasks will be added here -->
+
+            <div class="statistics">
+                <h3>Statistics</h3>
+                <canvas id="taskChart"></canvas> <!-- Placeholder for pie chart -->
+            </div>
+        </div>
+
+        <!-- Middle Panel - Task Form -->
+        <div class="middle-panel">
+            <h2>Add New Task</h2>
+            <form id="task-form">
+                <label for="task-title">Task Title</label>
+                <input type="text" id="task-title" name="task-title" required placeholder="Enter your task title">
+
+                <label for="task-priority">Priority</label>
+                <select id="task-priority" name="task-priority" required>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+
+                <label for="task-date">Assign Date</label>
+                <input type="date" id="task-date" name="task-date" required>
+
+                <button type="submit">Add Task</button>
+            </form>
+        </div>
+
+        <!-- Right Panel - Calendar -->
+        <div class="right-panel">
+            <h2>Calendar</h2>
+            <div class="calendar">
+                <iframe src="https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com&ctz=Asia%2FCalcutta"
+                    style="border: 0" width="300" height="250" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="tasks.js"></script>
+</body>
+</html>
